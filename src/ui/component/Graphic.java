@@ -21,6 +21,13 @@ public class Graphic extends Component {
     component = createComponent();
   }
 
+  public static void draw(Circle circle, Graphics g) {
+    g.drawOval(circle.getCenterX() - circle.getRadius(),
+               circle.getCenterY() - circle.getRadius(),
+               2 * circle.getRadius(),
+               2 * circle.getRadius());
+  }
+
   public JComponent getComponent() {
     return component;
   }
@@ -34,7 +41,7 @@ public class Graphic extends Component {
       @Override
       protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        shape.draw(g);
+        draw(shape, g);
       }
     };
     panel.addMouseListener(graphicMouseListener);

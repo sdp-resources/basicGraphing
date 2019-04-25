@@ -1,7 +1,5 @@
 package shape;
 
-import java.awt.*;
-
 public class Circle {
   Point center;
   private int radius;
@@ -43,10 +41,4 @@ public class Circle {
     center = new Point(x, y);
   }
 
-  public void draw(Graphics g) {
-    g.drawOval(center.x - radius,
-               center.y - radius,
-               2 * radius,
-               2 * radius);
-  }
 }
